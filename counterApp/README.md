@@ -1,8 +1,8 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### useState hooks is used to create a state variable and a function to update the state variable. The useState hook takes the initial value of the state variable as an argument and returns an array with two elements. The first element is the state variable, and the second element is the function to update the state variable.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+syntax: 
+
+`` 
+const [stateVariable, setStateFunction] = useState(initialValue); ``
