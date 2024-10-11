@@ -1,1 +1,3 @@
 ### props in react are used to pass data from one component to another. In the above code, we have created a Card component that takes three props: link, title, and desc. These props are passed from the App component to the Card component. The Card component then uses these props to display an image, title, and description of a product.
+
+### the previous method is not efficient because we have to pass the props to every components.This cause the code to be more complex and hard to maintain and understand.So we can use map function to pass the props to the components stored in the array.Here we have to use the key attribute to the parent component to avoid the warning. 
