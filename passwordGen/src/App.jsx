@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const App = () => {
   const [length, setLength] = useState(10); // Added state for length
@@ -8,6 +8,7 @@ const App = () => {
   const [password, setPassword] = useState(""); // Added state for password
   const [clicked, setClicked] = useState(false);
 
+  let passwordRef = useRef();
   useEffect(() => {
     generatePassword();
   }, [clicked]);
@@ -31,15 +32,27 @@ const App = () => {
           Password Generator
         </h1>
         <div className="flex flex-col w-[400px] h-[265px] bg-white mx-auto mt-8 p-5 rounded-lg">
-          <input
-            className="p-2 border border-gray-300 rounded-md text-lg"
-            type="text"
-            name="password"
-            id="password"
-            value={password || "dhi38"}
-            placeholder="Password"
-            readOnly
-          />
+          <div className="w-full flex items-center">
+            <input
+              ref={passwordRef}
+              className="p-2 border border-gray-300 rounded-l-md text-lg outline-none w-3/4"
+              type="text"
+              name="password"
+              id="password"
+              value={password || "dhi38"}
+              placeholder="Password"
+              readOnly
+            />
+            <button
+              className="w-1/4 h-full text-white text-xl rounded-r-md  bg-gray-500 hover:bg-gray-600"
+              onClick={() => {
+                passwordRef.current.select();
+                window.navigator.clipboard.writeText(password);
+              }}
+            >
+              copy
+            </button>
+          </div>
           <div className="flex flex-col py-3 text-lg">
             <div className="flex gap-2">
               <label htmlFor="length">Choose length:</label>
