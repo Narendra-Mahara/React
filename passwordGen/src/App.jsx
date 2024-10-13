@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-
+import { FaRegCopy } from "react-icons/fa";
 const App = () => {
   const [length, setLength] = useState(10); // Added state for length
   const [uppercase, setUppercase] = useState(false);
@@ -32,25 +32,25 @@ const App = () => {
           Password Generator
         </h1>
         <div className="flex flex-col w-[400px] h-[265px] bg-white mx-auto mt-8 p-5 rounded-lg">
-          <div className="w-full flex items-center">
+          <div className="w-full flex items-center relative">
             <input
               ref={passwordRef}
-              className="p-2 border border-gray-300 rounded-l-md text-lg outline-none w-3/4"
+              className="p-2 border border-gray-300 rounded-md text-lg outline-none w-full "
               type="text"
               name="password"
               id="password"
-              value={password || "dhi38"}
+              value={password}
               placeholder="Password"
               readOnly
             />
             <button
-              className="w-1/4 h-full text-white text-xl rounded-r-md  bg-gray-500 hover:bg-gray-600"
+              className=" h-full text-3xl hover:text-gray-600 absolute right-0 "
               onClick={() => {
                 passwordRef.current.select();
                 window.navigator.clipboard.writeText(password);
               }}
             >
-              copy
+              <FaRegCopy />
             </button>
           </div>
           <div className="flex flex-col py-3 text-lg">
