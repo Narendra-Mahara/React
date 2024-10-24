@@ -1,4 +1,5 @@
 import Selectors from "./Components/Selectors";
+import { IoMdSwap } from "react-icons/io";
 
 let App = () => {
   return (
@@ -19,9 +20,9 @@ let App = () => {
           />
         </div>
 
-        <div className="flex justify-between p-4 text-left">
+        <div className="flex justify-between items-center p-4 text-left">
           <Selectors labelValue="From" />
-          icon
+          <IoMdSwap size={30} />
           <Selectors labelValue="To" />
         </div>
 
