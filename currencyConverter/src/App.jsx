@@ -10,7 +10,12 @@ let App = () => {
           <label htmlFor="input" className="text-xl">
             Amount
           </label>
-          <input className="py-2 border border-zinc-800 outline-none px-2 rounded-md" type="number" name="" id="input" />
+          <input
+            className="py-2 border border-zinc-800 outline-none px-2 rounded-md remove-arrow"
+            type="number"
+            name=""
+            id="input"
+          />
         </div>
         {/* <Selectors countryName={"eur"} />
         <Selectors countryName={"eur"} /> */}
