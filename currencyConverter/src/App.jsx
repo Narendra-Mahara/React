@@ -1,4 +1,4 @@
-// import Selectors from "./Components/Selectors";
+import Selectors from "./Components/Selectors";
 
 let App = () => {
   return (
@@ -11,16 +11,21 @@ let App = () => {
             Amount
           </label>
           <input
-            className="py-2 border border-zinc-800 outline-none px-2 rounded-md remove-arrow"
+            className="p-2 border border-zinc-800 outline-none rounded-md remove-arrow text-xl"
             type="number"
             name=""
             id="input"
+            placeholder="Enter Amount"
           />
         </div>
-        {/* <Selectors countryName={"eur"} />
-        <Selectors countryName={"eur"} /> */}
 
-        <div className="w-full px-5 mt-32">
+        <div className="flex justify-between p-4 text-left">
+          <Selectors labelValue="From" />
+          icon
+          <Selectors labelValue="To" />
+        </div>
+
+        <div className="w-full px-5 ">
           <button className="bg-red-700 w-full p-2 text-2xl text-white rounded-xl ">
             Convert
           </button>
