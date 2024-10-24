@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const countryList = {
   AED: "AE",
@@ -165,9 +165,23 @@ const countryList = {
 const Selectors = ({ labelValue }) => {
   const defaultCurrency = labelValue === "From" ? "USD" : "NPR";
   const [countryCode, setCountryCode] = useState(countryList[defaultCurrency]);
+  const [currency, setCurrency] = useState(defaultCurrency);
+
+  // const fetchCurrency = async (currency) => {
+  //   const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency.toLowerCase()}.json`;
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   console.log(data);
+  // };
+
+  // useEffect(() => {
+  //   fetchCurrency(currency);
+  // }, [currency]);
 
   const updateFlag = (e) => {
-    setCountryCode(countryList[e.target.value]);
+    const selectedCurrency = e.target.value;
+    setCountryCode(countryList[selectedCurrency]);
+    setCurrency(selectedCurrency);
   };
 
   return (
@@ -177,7 +191,10 @@ const Selectors = ({ labelValue }) => {
       </label>
       <div className="flex gap-2 rounded-sm py-2 items-center">
         <div className="flag">
-          <img src={`https://flagsapi.com/${countryCode}/shiny/32.png`} />
+          <img
+            src={`https://flagsapi.com/${countryCode}/shiny/32.png`}
+            alt={`${countryCode} flag`}
+          />
         </div>
         <div className="currencyType">
           <select

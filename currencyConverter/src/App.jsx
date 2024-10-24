@@ -27,7 +27,12 @@ let App = () => {
         </div>
 
         <div className="w-full px-5 ">
-          <button className="bg-red-700 w-full p-2 text-2xl text-white rounded-xl ">
+          <button
+            className="bg-red-700 w-full p-2 text-2xl text-white rounded-xl "
+            onClick={() => {
+              console.log("hello");
+            }}
+          >
             Convert
           </button>
         </div>
