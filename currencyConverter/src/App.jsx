@@ -22,7 +22,13 @@ let App = () => {
 
         <div className="flex justify-between items-center p-4 text-left">
           <Selectors labelValue="From" />
-          <IoMdSwap size={30} />
+          <IoMdSwap
+            className="cursor-pointer"
+            onClick={() => {
+              alert("This doesn't work yet!");
+            }}
+            size={30}
+          />
           <Selectors labelValue="To" />
         </div>
 
@@ -30,7 +36,7 @@ let App = () => {
           <button
             className="bg-red-700 w-full p-2 text-2xl text-white rounded-xl "
             onClick={() => {
-              console.log("hello");
+              alert("This doesn't work yet!");
             }}
           >
             Convert
