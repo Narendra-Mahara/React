@@ -11,6 +11,7 @@ import {
 import Home from "./Components/Home.jsx";
 import Contact from "./Components/Contact.jsx";
 import About from "./Components/About.jsx";
+import Users from "./Components/Users.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="user/:name" element={<Users />} />
     </Route>
   )
 );
