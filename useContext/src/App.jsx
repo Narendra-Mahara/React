@@ -1,14 +1,14 @@
-import React from "react";
-import UserContextProvider from "./context/UserContextProvider";
+import React,{useState} from "react";
 import Login from "./component/Login";
 import Profile from "./component/Profile";
+import UserContext from "./context/UserContext";
 const App = () => {
+    const [user, setuser] = useState("");
   return (
-    <UserContextProvider>
-      {/* {components haru jo use garxan values haru} */}
+    <UserContext.Provider value={{ user, setuser }}>
       <Login />
       <Profile />
-    </UserContextProvider>
+    </UserContext.Provider>
   );
 };
 
